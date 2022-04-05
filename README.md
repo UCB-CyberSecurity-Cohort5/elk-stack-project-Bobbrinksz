@@ -1,6 +1,8 @@
+# ELK Stack Deployment (with automation)
+
 The files in this repository were used to configure the network depicted below.
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/diagram/Briana%20Norman%20NetWork.jpg)
-"Azure Network with Elk Server Diagram"
+### "Azure Network with Elk Server Diagram"
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the [AllPlayBooks aka JumpBox Files](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/tree/main/Jumpbox%20Files) file may be used to install only certain pieces of it, such as Filebeat.
 
