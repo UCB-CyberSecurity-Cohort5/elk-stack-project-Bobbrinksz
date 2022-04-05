@@ -61,9 +61,9 @@ Machines within the network can only be accessed by _____.
 TODO: Which machine did you allow to access your ELK VM? What was its IP address?
 - 10.0.0.4
 
-**A summary of the access policies in place can be found in the table below.
+**A summary of the access policies in place can be found in the table below**.
 
-| **Name   | Publicly Accessible |Allowed IP Addresses**|
+| Name     | Publicly Accessible |Allowed IP Addresses  |
 |----------|---------------------|----------------------|
 | Jump Box | No                  |13.67.200.90/22, 13.67.200.90/80|
 | Web1     | No                  |10.0.0.4              |
@@ -72,12 +72,68 @@ TODO: Which machine did you allow to access your ELK VM? What was its IP address
 
 
 ### Elk Configuration
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because... 
+_it benefits overall costs reductions due to the downtime and costs not occured prior to deployment. Additionally, due to the limited need to monitor automated scripted tasks the consistency and reliability increases tenfold because of these checked, tested, made and deloyed scripts. Better operations management and efficiency by enabling and putting IaC aka Infrastructure as Code. 
 
-- _TODO: What is the main advantage of automating configuration with Ansible?_
-The playbook implements the following tasks:
+_TODO: What is the main advantage of automating configuration with Ansible?_
 
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+---
+
+## The playbook implements the following tasks
+    ---
+    - name: Configure Elk VM with Docker
+      hosts: elk
+      remote_user: RedAdmin
+      become: true
+      tasks:
+
+### Using apt install module - installing docker.io using apt
+    - name: installing docker.io
+      apt:
+        update_cache: yes
+        name: docker.io
+        state: present
+
+### Using apt install module - installing python3-pip using apt
+    - name: installing pip3
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+
+### Using python module - installing the docker python module with pip
+    - name: installing python module
+      pip:
+        name: docker
+        state: present
+
+### Using a sysctl module - increasing virtual memory to "262144"
+    - name: more memory
+      sysctl:
+        name: vm.max_map_count
+        value: "262144"
+        state: present
+        reload: yes
+
+### Using a DockerContainer module - download and launch the docker elk container with the image "sebp/elk:761"
+    - name: download and launch a docker elk container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: started
+        restart_policy: always
+        published_ports:
+          - 5601:5601
+          - 9200:9200
+          - 5044:5044
+
+### Using a control system daemon module aka a systemd module - enabling docker service on Boot systemd
+    - name: enabling service doc
+      systemd:
+        name: docker
+        enabled: yes
+
+_TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...
 - ...
 
