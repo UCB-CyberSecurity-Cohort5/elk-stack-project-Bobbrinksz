@@ -162,13 +162,15 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
 
-- Copy the configuration file to the Jumpbox _/etc/ansible/files.
+- Copy the configuration file to the Jumpbox _/etc/ansible/files_.
+- Update the hosts file to include the target machines IP address in the appropiate hosts group and if it does not exist then you create it.
+
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/7.jpg)
 
 
-- Update the hosts file to include the target machines IP address in the appropiate hosts group and if it does not exist then you create it. 
+**- Run the playbook, and navigate to the "ELK Server Kibana" as a GUI webpage accessed from the web browser which allows you to check that the installation worked as expected.**
 
 
-- Run the playbook, and navigate to the "ELK Server Kibana" as a GUI webpage accessed from the web browser which allows you to check that the installation worked as expected.
 
 **_Answer the following questions to fill in the blanks:_**
 
