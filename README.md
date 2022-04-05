@@ -131,9 +131,7 @@ _it benefits overall costs reductions due to the downtime and costs not occured 
         name: docker
         enabled: yes
 
-_In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+
 
 #### The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -165,4 +163,16 @@ _Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - _Which URL do you navigate to in order to check that the ELK server is running?
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+**Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+ansible-playbook [path and name of playbook] is the command needed to 
+
+ansible-playbook /etc/ansible/metricbeat-playbook.yml
+ansible-playbook /etc/ansible/metricbeat-playbook.yml
+ansible-playbook /etc/ansible/metricbeat-playbook.yml
+ansible-playbook /etc/ansible/metricbeat-playbook.yml
+
+These playbooks will setup the specific tasks listed at the top of this document.
+
+
+
