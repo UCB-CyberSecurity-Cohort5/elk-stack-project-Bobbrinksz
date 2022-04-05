@@ -170,6 +170,13 @@ SSH into the control node and follow the steps below:
 
 **- Run the playbook, and navigate to the "ELK Server Kibana" as a GUI webpage accessed from the web browser which allows you to check that the installation worked as expected.**
 
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/1.png)
+
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/6.png)
+
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/8.png)
+
+![image](
 
 
 **_Answer the following questions to fill in the blanks:_**
