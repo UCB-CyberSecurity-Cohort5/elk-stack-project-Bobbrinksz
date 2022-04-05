@@ -22,6 +22,7 @@ This document contains the following details:
   - Beats in Use
   - Machines Being Monitored
 - How to Use the Ansible Build
+
 ### Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
@@ -51,16 +52,22 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet.
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed connection through the "LoadBalancer FrontEnd IP" which has the following IP addresses:
+
 - _TODO: Add whitelisted IP addresses_
 Machines within the network can only be accessed by _____.
+
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
-A summary of the access policies in place can be found in the table below.
-| Name     | Publicly Accessible | Allowed IP Addresses |
+
+**A summary of the access policies in place can be found in the table below.
+
+| **Name   | Publicly Accessible |Allowed IP Addresses**|
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | No                  | 10.0.0.1 10.0.0.2    |
+| Web1     | No                  |                      |
+| Web2     | No                  |                      |
+| Web3     | No                  |                      |
+
 
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
