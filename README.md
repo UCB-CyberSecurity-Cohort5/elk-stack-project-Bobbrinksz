@@ -176,12 +176,26 @@ SSH into the control node and follow the steps below:
 
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/8.png)
 
-![image](
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/g.jpg)
+
+
+
+
+**- _Checking System Logs on Kibana_**
+
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/f.jpg)
+
+
+
+
+**- _Checking Filebeat System in Dashboards on Kibana_**
+
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/d.jpg)
 
 
 **_Answer the following questions to fill in the blanks:_**
 
-**_Which file is the playbook? Where do you copy it?_**
+  **_Which file is the playbook? Where do you copy it?_**
 
 - The files with the "YAML" or ".yml" end extension in the file names are the files that are PLAYBOOKS.
 - They are located (like most Ansible playbooks) in a docker container on a Jumpbox and placed in the directory, _/etc/ansible/roles directory. 
