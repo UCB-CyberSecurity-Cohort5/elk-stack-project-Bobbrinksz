@@ -79,7 +79,7 @@ _TODO: What is the main advantage of automating configuration with Ansible?_
 
 ---
 
-## The playbook implements the following tasks
+### The playbook implements the following tasks:
     ---
     - name: Configure Elk VM with Docker
       hosts: elk
@@ -87,27 +87,27 @@ _TODO: What is the main advantage of automating configuration with Ansible?_
       become: true
       tasks:
 
-### Using apt install module - installing docker.io using apt
+#### Using apt install module - _installing docker.io using apt
     - name: installing docker.io
       apt:
         update_cache: yes
         name: docker.io
         state: present
 
-### Using apt install module - installing python3-pip using apt
+#### Using apt install module - _installing python3-pip using apt
     - name: installing pip3
       apt:
         force_apt_get: yes
         name: python3-pip
         state: present
 
-### Using python module - installing the docker python module with pip
+#### Using python module - _installing the docker python module with pip
     - name: installing python module
       pip:
         name: docker
         state: present
 
-### Using a sysctl module - increasing virtual memory to "262144"
+#### Using a sysctl module - _increasing virtual memory to "262144"
     - name: more memory
       sysctl:
         name: vm.max_map_count
@@ -115,7 +115,7 @@ _TODO: What is the main advantage of automating configuration with Ansible?_
         state: present
         reload: yes
 
-### Using a DockerContainer module - download and launch the docker elk container with the image "sebp/elk:761"
+#### Using a DockerContainer module - _download and launch the docker elk container with the image "sebp/elk:761"
     - name: download and launch a docker elk container
       docker_container:
         name: elk
@@ -127,7 +127,7 @@ _TODO: What is the main advantage of automating configuration with Ansible?_
           - 9200:9200
           - 5044:5044
 
-### Using a control system daemon module aka a systemd module - enabling docker service on Boot systemd
+#### Using a control system daemon module aka a systemd module - _enabling docker service on Boot systemd
     - name: enabling service doc
       systemd:
         name: docker
@@ -137,23 +137,32 @@ _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., ins
 - ...
 - ...
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+#### The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
+
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- 10.0.0.5
+- 10.0.0.6
+- 10.0.0.7
+
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Filebeat
+- Metricbeat
+
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- System Metrics: CPU, memory, network usages, disk usage, services (like Redis, Zookeeper, Nginx, MongoDB, and Apache)
+- These Beats also allow us to collect System Log Files and furthermore, can collect and log specifics like user and locations and the selected users web traffic 
+
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
 - Copy the _____ file to _____.
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
+
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
