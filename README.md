@@ -28,19 +28,20 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 
-_What aspect of security do load balancers protect? What is the advantage of a jump box?_
+**_What aspect of security do load balancers protect? What is the advantage of a jump box?_**
 - Load Balancers play a significant role in both aspects of security and protection. The function of the "off-loading" in a load balancer is critical for defending company's or organizations from DDoS (denail of service) attacks by balancing or shifting the incoming traffic  and additional attack traffic from a company or corporate server to multiple servers which can include a public cloud provider, which then prevent the DDoS from executing because the server has not been overloaded with request traffic on one or smaller servers.
-- The advantages of a Jump box are: Setting up Full Control for accessing the jumpbox are completely customizable. Controlling the access by a specific ip address from your work station allows better security and protocols. 
+**The advantages of a Jump box are:**
+- Setting up Full Control for accessing the jumpbox are completely customizable. Controlling the access by a specific ip address from your work station allows better security and protocols. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the machine and its metrics aka traffic and system logs.
 
-_What does Filebeat watch for?_
+**_What does Filebeat watch for?_**
 - Filebeat forwards things like; monitoring log files (full or seleced and specified) along with a list log events to Logstash for indexing (or to Elasticsearch for indexing).
 
-_What does Metricbeat record?_
+**_What does Metricbeat record?_**
 - Metricbeat is a simplified (or lightweight) agent/shipper that is utilized in collecting the systems metrics along with more things like application metrics and then forwards them to Elasticsearch aka Elastic Stack Server. 
 
-The configuration details of each machine may be found below.
+**The configuration details of each machine may be found below.**
 
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 | Name     | Function | IP Address | Operating System |
@@ -54,11 +55,11 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet.
 Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed connection through the "LoadBalancer FrontEnd IP" which has the following IP addresses:
 
-Add whitelisted IP addresses_
+**Add whitelisted IP addresses_**
 Machines within the network can only be accessed by _____.
 - 13.67.200.90
 
-Which machine did you allow to access your ELK VM? What was its IP address?
+**Which machine did you allow to access your ELK VM? What was its IP address?**
 - 10.0.0.4
 
 **A summary of the access policies in place can be found in the table below**.
@@ -72,7 +73,7 @@ Which machine did you allow to access your ELK VM? What was its IP address?
 
 
 ### Elk Configuration
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because... 
+**Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...**
 _it benefits overall costs reductions due to the downtime and costs not occured prior to deployment. Additionally, due to the limited need to monitor automated scripted tasks the consistency and reliability increases tenfold because of these checked, tested, made and deloyed scripts. Better operations management and efficiency by enabling and putting IaC aka Infrastructure as Code. 
 
 ---
@@ -150,18 +151,17 @@ This ELK server is configured to monitor the following machines:
 - 10.0.0.6
 - 10.0.0.7
 
-We have installed the following Beats on these machines:
+**We have installed the following Beats on these machines:**
 - Filebeat
 - Metricbeat
 
-These Beats allow us to collect the following information from each machine:
+**These Beats allow us to collect the following information from each machine:**
 - System Metrics: CPU, memory, network usages, disk usage, services (like Redis, Zookeeper, Nginx, MongoDB, and Apache)
 - These Beats also allow us to collect System Log Files and furthermore, can collect and log specifics like user and locations and the selected users web traffic 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
-
 - Copy the configuration file to the Jumpbox _/etc/ansible/files_.
 - Update the hosts file to include the target machines IP address in the appropiate hosts group and if it does not exist then you create it.
 
@@ -193,7 +193,7 @@ SSH into the control node and follow the steps below:
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/d.jpg)
 
 
-**_Answer the following questions to fill in the blanks:_**
+### **_Answer the following questions to fill in the blanks:_**
 
   **_Which file is the playbook? Where do you copy it?_**
 
@@ -212,12 +212,41 @@ SSH into the control node and follow the steps below:
   - http://20.125.35.100:5601/app/kibana#/home/tutorial/dockerMetrics 
   - http://20.125.35.100:5601/app/kibana#/home
 
-**Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-ansible-playbook [path and name of playbook] is the command needed to 
+### **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
-_ansible-playbook /etc/ansible/metricbeat-playbook.yml_
+**_The following instructions will demonstrate commands used to "run" and then "deploy" one playbook at a time._**
 
-These playbooks will setup the specific tasks listed at the top of this document.
+### Generating SSH Key-Gen
+  - Run in the command line: _ssh-keygen_ (to create a new SSH key-gen pair).
+  - SSH into the Jumpbox after the public key from the generated key pair is uploaded using the following line command, _ssh admin-username@VM-public-IP_ 
+    - (substitute "admin-username" for our current example being, "RedAdmin" and "VM-public-IP" is "40.83.244.89" for this examples network set up = Command: **_ssh RedAdmin@40.83.244.89_**.
+
+### Installing Docker.io 
+On Jumpbox install Docker.io by running the command:
+  - sudo apt update
+  - sudo apt install docker,io
+  - sudo systemctl status docker
+
+### Pull for Ansible Container
+Once Docker.io is installed and up and running, execute the commands:
+  - sudo docker pull cyberxsecurity/ansible
+  - sudo su
+  - docker run -ti cyberxsecurity/ansible:latest bash **_This RUN command is done ONCE - if you RUN multiple times, you will NEED TO REMOVE_** use command line:
+    - docker rm {the container number of your duplicates you made running RUN more then once - Just don't do it}. 
+
+### Bootup and Accessing Your Docker Container
+  - sudo docker container list -a
+  - sudo docker start {name of container you wish to bootup}
+  - sudo docker attach {name of container you wish attach to access}
+- Generate new SSH key-gen (like performed in previous steps above) provind the authentication needed to access the docker container from the web server. 
+
+### Ansible Containers on Jumpbox's - How to Run Playbooks
+  - Using the command: _ansible-playbook [path and name of playbook]_
+    - **Example:** _ansibleplaybook /etc/ansible/vmplaybook.yml_
+
+--- 
+
+_The specified and specific tasks listed at the top of this document will be regurgitated in use for application in creating these playbooks, regarding variances of execution abilities._
 
 
 
