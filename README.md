@@ -75,8 +75,6 @@ Which machine did you allow to access your ELK VM? What was its IP address?
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because... 
 _it benefits overall costs reductions due to the downtime and costs not occured prior to deployment. Additionally, due to the limited need to monitor automated scripted tasks the consistency and reliability increases tenfold because of these checked, tested, made and deloyed scripts. Better operations management and efficiency by enabling and putting IaC aka Infrastructure as Code. 
 
-_What is the main advantage of automating configuration with Ansible?_
-
 ---
 
 ### The playbook implements the following tasks:
