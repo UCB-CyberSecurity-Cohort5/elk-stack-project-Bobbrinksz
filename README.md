@@ -155,14 +155,29 @@ These Beats allow us to collect the following information from each machine:
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+
+- Copy the configuration file to the Jumpbox _/etc/ansible/files.
+
+
+- Update the hosts file to include the target machines IP address in the appropiate hosts group and if it does not exist then you create it. 
+
+
+- Run the playbook, and navigate to the "ELK Server Kibana" as a GUI webpage accessed from the web browser which allows you to check that the installation worked as expected.
 
 _Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+ _Which file is the playbook? Where do you copy it?_
+- The files with the "YAML" or ".yml" end extension in the file names are the files that are PLAYBOOKS.
+- They are located (like most Ansible playbooks) in a docker container on a Jumpbox and placed in the directory, _/etc/ansible/roles directory. 
+
+ _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- Update the _/etc/ansible/hosts_ file and make sure the targets machines IP addresses have the appropiate "host header" which is bracketed and remove the # comment out. 
+- You specificy which machine to install the ELK server on by indicating this in the playbooks themselves where to install (whether it be on the ELK Server and/or Filebeat or Metricbeat) where the the ELKS hosted machine indicates such for the host file. 
+
+_Which URL do you navigate to in order to check that the ELK server is running?
+- All 3 URLS below worked for checking if the ELK server is running on the GIU interface website Kibana
+  - https://20.125.35.100:5601/app/kibana
+  - http://20.125.35.100:5601/app/kibana#/home/tutorial/dockerMetrics 
+  - http://20.125.35.100:5601/app/kibana#/home
 
 **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 ansible-playbook [path and name of playbook] is the command needed to 
