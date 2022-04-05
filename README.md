@@ -1,8 +1,20 @@
 The files in this repository were used to configure the network depicted below.
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/diagram/Briana%20Norman%20NetWork.jpg)
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the [AllPlayBooks](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/tree/main/Jumpbox%20Files) file may be used to install only certain pieces of it, such as Filebeat.
+"Azure Network with Elk Server Diagram"
 
-[ElkPlaybook.yml](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/Jumpbox%20Files/elkplaybook.yml) - this Playbook installs Elk Ansible container. 
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the [AllPlayBooks aka JumpBox Files](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/tree/main/Jumpbox%20Files) file may be used to install only certain pieces of it, such as Filebeat.
+
+- [ElkPlaybook.yml](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/Jumpbox%20Files/elkplaybook.yml) - this Playbook installs Elk Ansible container. 
+- [filebeat-playbook.yml](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/Jumpbox%20Files/filebeat-playbook.yml) - This is a Playbook that installs and launches the filebeat service
+- [filebeatconfig.yml](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/Jumpbox%20Files/filebeatconfig.yml) - This is the full FileBeat Configuration documented in a file listing all non-deprecated options and its comments that have its corresponding updated IP Addressess
+- [metricbeat-playbook.yml](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/Jumpbox%20Files/metricbeat-playbook.yml) - This Metricbeat Playbook shows what is being installed to the Docker Metrics/metricbeat
+- [metricbeat-config.yml](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/Jumpbox%20Files/metricbeat-config.yml) - This metricbeat configuration file illustrates its  most commonly used options and highlights them
+- [vmplaybook.yml](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/Jumpbox%20Files/vmplaybook.yml) - This is a configured Web Docker VM that has Ansible along with Launch Web DVWA Docker Container
+- [host file](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/Jumpbox%20Files/host%20file) - This is the default ansible 'hosts' file
+- [Config](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/Jumpbox%20Files/Config) - This is the configuration file for ansible
+
+
+
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
@@ -12,12 +24,18 @@ This document contains the following details:
 - How to Use the Ansible Build
 ### Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+
 - _TODO: What does Filebeat watch for?_
+- 
 - _TODO: What does Metricbeat record?_
+- 
 The configuration details of each machine may be found below.
+
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
