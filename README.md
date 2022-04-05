@@ -28,16 +28,16 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 
-_TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+_What aspect of security do load balancers protect? What is the advantage of a jump box?_
 - Load Balancers play a significant role in both aspects of security and protection. The function of the "off-loading" in a load balancer is critical for defending company's or organizations from DDoS (denail of service) attacks by balancing or shifting the incoming traffic  and additional attack traffic from a company or corporate server to multiple servers which can include a public cloud provider, which then prevent the DDoS from executing because the server has not been overloaded with request traffic on one or smaller servers.
 - The advantages of a Jump box are: Setting up Full Control for accessing the jumpbox are completely customizable. Controlling the access by a specific ip address from your work station allows better security and protocols. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the machine and its metrics aka traffic and system logs.
 
-_TODO: What does Filebeat watch for?_
+_What does Filebeat watch for?_
 - Filebeat forwards things like; monitoring log files (full or seleced and specified) along with a list log events to Logstash for indexing (or to Elasticsearch for indexing).
 
-_TODO: What does Metricbeat record?_
+_What does Metricbeat record?_
 - Metricbeat is a simplified (or lightweight) agent/shipper that is utilized in collecting the systems metrics along with more things like application metrics and then forwards them to Elasticsearch aka Elastic Stack Server. 
 
 The configuration details of each machine may be found below.
@@ -54,11 +54,11 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet.
 Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed connection through the "LoadBalancer FrontEnd IP" which has the following IP addresses:
 
-TODO: Add whitelisted IP addresses_
+Add whitelisted IP addresses_
 Machines within the network can only be accessed by _____.
 - 13.67.200.90
 
-TODO: Which machine did you allow to access your ELK VM? What was its IP address?
+Which machine did you allow to access your ELK VM? What was its IP address?
 - 10.0.0.4
 
 **A summary of the access policies in place can be found in the table below**.
@@ -75,7 +75,7 @@ TODO: Which machine did you allow to access your ELK VM? What was its IP address
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because... 
 _it benefits overall costs reductions due to the downtime and costs not occured prior to deployment. Additionally, due to the limited need to monitor automated scripted tasks the consistency and reliability increases tenfold because of these checked, tested, made and deloyed scripts. Better operations management and efficiency by enabling and putting IaC aka Infrastructure as Code. 
 
-_TODO: What is the main advantage of automating configuration with Ansible?_
+_What is the main advantage of automating configuration with Ansible?_
 
 ---
 
@@ -133,13 +133,13 @@ _TODO: What is the main advantage of automating configuration with Ansible?_
         name: docker
         enabled: yes
 
-_TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+_In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...
 - ...
 
 #### The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 
 ### Target Machines & Beats
@@ -163,7 +163,7 @@ SSH into the control node and follow the steps below:
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
+_Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - _Which URL do you navigate to in order to check that the ELK server is running?
