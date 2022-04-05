@@ -26,23 +26,29 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-- 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 
-- _TODO: What does Filebeat watch for?_
-- 
-- _TODO: What does Metricbeat record?_
-- 
+_TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- Load Balancers play a significant role in both aspects of security and protection. The function of the "off-loading" in a load balancer is critical for defending company's or organizations from DDoS (denail of service) attacks by balancing or shifting the incoming traffic  and additional attack traffic from a company or corporate server to multiple servers which can include a public cloud provider, which then prevent the DDoS from executing because the server has not been overloaded with request traffic on one or smaller servers.
+- The advantages of a Jump box are:
+
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the machine and its metrics aka traffic and system logs.
+
+_TODO: What does Filebeat watch for?_
+- Filebeat forwards things like; monitoring log files (full or seleced and specified) along with a list log events to Logstash for indexing (or to Elasticsearch for indexing).
+
+_TODO: What does Metricbeat record?_
+- Metricbeat is a simplified (or lightweight) agent/shipper that is utilized in collecting the systems metrics along with more things like application metrics and then forwards them to Elasticsearch aka Elastic Stack Server. 
+
 The configuration details of each machine may be found below.
 
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Jump Box | Gateway  | 10.0.0.4   | Ubuntu 18.04  |
+| TODO     |DVWA Container|10.0.0.5|Ubuntu 18.04 |
+| TODO     |DVWA Container|10.0.0.6|Ubuntu 18.04 |
+| TODO     |DVWA Container|10.0.0.8|Ubuntu 18.04 |
+
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet.
 Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
@@ -55,15 +61,21 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
 |          |                     |                      |
 |          |                     |                      |
+
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+
 - _TODO: What is the main advantage of automating configuration with Ansible?_
 The playbook implements the following tasks:
+
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...
 - ...
+
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
