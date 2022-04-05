@@ -206,7 +206,7 @@ SSH into the control node and follow the steps below:
 **_Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_**
 
 - Update the _/etc/ansible/hosts_ file and make sure the targets machines IP addresses have the appropiate "host header" which is bracketed and remove the # comment out. 
-- You specificy which machine to install the ELK server on by indicating this in the playbooks themselves where to install (whether it be on the ELK Server and/or Filebeat or Metricbeat) where the the ELKS hosted machine indicates such for the host file. 
+- You specify which machine to install the ELK server on by indicating this in the playbooks themselves where to install (whether it be on the ELK Server and/or Filebeat or Metricbeat) where the the ELKS hosted machine indicates such for the host file. 
 
 **_Which URL do you navigate to in order to check that the ELK server is running?_**
 
