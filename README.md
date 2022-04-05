@@ -30,7 +30,7 @@ Load balancing ensures that the application will be highly available, in additio
 
 _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 - Load Balancers play a significant role in both aspects of security and protection. The function of the "off-loading" in a load balancer is critical for defending company's or organizations from DDoS (denail of service) attacks by balancing or shifting the incoming traffic  and additional attack traffic from a company or corporate server to multiple servers which can include a public cloud provider, which then prevent the DDoS from executing because the server has not been overloaded with request traffic on one or smaller servers.
-- The advantages of a Jump box are:
+- The advantages of a Jump box are: Setting up Full Control for accessing the jumpbox are completely customizable. Controlling the access by a specific ip address from your work station allows better security and protocols. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the machine and its metrics aka traffic and system logs.
 
