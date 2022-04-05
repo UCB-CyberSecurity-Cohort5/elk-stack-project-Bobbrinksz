@@ -65,10 +65,10 @@ TODO: Which machine did you allow to access your ELK VM? What was its IP address
 
 | **Name   | Publicly Accessible |Allowed IP Addresses**|
 |----------|---------------------|----------------------|
-| Jump Box | No                  | 10.0.0.1 10.0.0.2    |
-| Web1     | No                  |                      |
-| Web2     | No                  |                      |
-| Web3     | No                  |                      |
+| Jump Box | No                  |13.67.200.90/22, 13.67.200.90/80|
+| Web1     | No                  |10.0.0.4              |
+| Web2     | No                  |10.0.0.4              |
+| Web3     | No                  |10.0.0.4              |
 
 
 ### Elk Configuration
