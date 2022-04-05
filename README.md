@@ -135,6 +135,10 @@ _it benefits overall costs reductions due to the downtime and costs not occured 
 
 #### The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/1.jpg)
+
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/blob/main/screenshots/2.jpg)
+
 
 **_![click here to view all screenshots in the listed "screenshot" folder](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-Bobbrinksz/tree/main/screenshots)_**
 
